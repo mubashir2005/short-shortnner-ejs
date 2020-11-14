@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+
+    <title>Short Shortnner</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
+      * {
+        font-family: "Lato", sans-serif;
+      }
+
+      .title {
+        font-family: "Lato", sans-serif;
+        font-size: 40px;
+        text-align: center;
+        font-weight: bold;
+      }
+      tbody {
+        font-weight: normal;
+      }
+      .styled {
+        font-style: italic;
+      }
+      p {
+        text-align: center;
+        color: darkcyan;
+        padding: 50px;
+        margin-top: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="title">Shorten your URLs for free</h1>
+      <form action="/shortUrls" method="POST" class="my-4 form-inline">
+        <label for="fullUrl" class="sr-only">Url</label>
+        <input
+          required
+          placeholder="Type or Paste your URL here"
+          type="url"
+          name="fullUrl"
+          id="fullUrl"
+          class="form-control col mr-2"
+        />
+        <button class="btn btn-primary" type="submit">Shorten</button>
+      </form>
+
+      <table class="table table-responsive table-hover">
+        <thead class="thead-dark">
+          <tr>
+            <th class="styled">Full URL</th>
+            <th class="styled">Short URL</th>
+            <th class="styled">Clicks</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% shortUrls.forEach(shortUrl => { %>
+          <tr>
+            <td>
+              <a href="<%= shortUrl.full %>"><%= shortUrl.full %></a>
+            </td>
+            <td>
+              <a href="<%= shortUrl.short %>"
+                >localhost:5000/<%= shortUrl.short %></a
+              >
+            </td>
+            <td><%= shortUrl.clicks %></td>
+          </tr>
+          <% }) %>
+        </tbody>
+      </table>
+      <footer>
+        <p>Copyright &copy;Short Shortnner 2020. All rights reserved.</p>
+      </footer>
+    </div>
+  </body>
+</html>
