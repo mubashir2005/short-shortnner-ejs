@@ -9,8 +9,11 @@
   "author": "Mohammed Mubashir Hasan",
   "license": "ISC",
   "dependencies": {
+    "deploy": "^1.0.3",
+    "dotenv": "^8.2.0",
     "ejs": "^3.1.5",
     "express": "^4.17.1",
+    "express-openid-connect": "^2.0.0",
     "heroku": "^7.47.3",
     "mongoose": "^5.10.13",
     "shortid": "^2.2.16"
