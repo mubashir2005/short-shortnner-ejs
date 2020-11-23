@@ -9,13 +9,16 @@
   "author": "Mohammed Mubashir Hasan",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "deploy": "^1.0.3",
     "dotenv": "^8.2.0",
     "ejs": "^3.1.5",
     "express": "^4.17.1",
     "express-openid-connect": "^2.0.0",
+    "global": "^4.4.0",
     "heroku": "^7.47.3",
     "mongoose": "^5.10.13",
+    "pm2": "^4.5.0",
     "shortid": "^2.2.16"
   },
   "devDependencies": {
