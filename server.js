@@ -3,9 +3,11 @@ require("dotenv").config();
 const mongoose = require("mongoose");
 const ShortUrl = require("./models/shortUrl");
 const app = express();
+const bcrypt = require("bcrypt");
+const Auth = require("./models/users");
 
 mongoose.connect(
-  "mongodb://Mubashir:y4gQEVGPQKq0gQ9c@cluster0-shard-00-00.ochei.mongodb.net:27017,cluster0-shard-00-01.ochei.mongodb.net:27017,cluster0-shard-00-02.ochei.mongodb.net:27017/shortened?ssl=true&replicaSet=atlas-5s5ecj-shard-0&authSource=admin&retryWrites=true&w=majority",
+  "mongodb://Mubashir:y4gQEVGPQKq0gQ9c@cluster0-shard-00-00.ochei.mongodb.net:27017,cluster0-shard-00-01.ochei.mongodb.net:27017,cluster0-shard-00-02.ochei.mongodb.net:27017/shortnner?ssl=true&replicaSet=atlas-5s5ecj-shard-0&authSource=admin&retryWrites=true&w=majority",
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -26,10 +28,35 @@ app.get("/in", async (req, res) => {
 });
 app.set("views", __dirname + "/views");
 app.engine("html", require("ejs").renderFile);
+
 app.get("/", (req, res) => {
-  res.render("index.html");
+  res.render("app.html");
 });
 
+app.get("/login", (req, res) => {
+  res.render("login.html");
+});
+
+app.get("/register", (req, res) => {
+  res.render("register.html");
+});
+
+app.post("/register", async (req, res) => {
+  try {
+    const hashedPassword = await bcrypt.hash(req.body.password, 10);
+    await Auth.create({
+      password: hashedPassword,
+      email: req.body.email,
+      name: req.body.name,
+    });
+    res.redirect("/login");
+  }
+  catch {
+    alert("Registration Failed.");
+    res.redirect('/register')
+  }
+
+}); //works now
 app.post("/shortUrls", async (req, res) => {
   await ShortUrl.create({ full: req.body.fullUrl });
 
