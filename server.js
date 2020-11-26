@@ -5,6 +5,14 @@ const ShortUrl = require("./models/shortUrl");
 const app = express();
 const bcrypt = require("bcrypt");
 const Auth = require("./models/users");
+const passport = require("passport");
+const flash = require("express-flash");
+const session = require("express-session");
+
+const initializePassport = require("./passport-config");
+initializePassport(passport, (email) => {
+  return Auth.find((user) => user.email === email);
+});
 
 mongoose.connect(
   "mongodb://Mubashir:y4gQEVGPQKq0gQ9c@cluster0-shard-00-00.ochei.mongodb.net:27017,cluster0-shard-00-01.ochei.mongodb.net:27017,cluster0-shard-00-02.ochei.mongodb.net:27017/shortnner?ssl=true&replicaSet=atlas-5s5ecj-shard-0&authSource=admin&retryWrites=true&w=majority",
@@ -16,6 +24,17 @@ mongoose.connect(
 
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: false }));
+app.use(flash);
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false,
+  })
+);
+
+app.use(passport.initialize);
+app.use(passport.session);
 
 app.get("/s", async (req, res) => {
   const shortUrls = await ShortUrl.find();
@@ -36,6 +55,11 @@ app.get("/", (req, res) => {
 app.get("/login", (req, res) => {
   res.render("login.html");
 });
+app.post("/login", passport.authenticate("local"), {
+  successRedirect: "/s",
+  failureRedirect: "/login",
+  failureFlash: true,
+});
 
 app.get("/register", (req, res) => {
   res.render("register.html");
@@ -50,12 +74,10 @@ app.post("/register", async (req, res) => {
       name: req.body.name,
     });
     res.redirect("/login");
-  }
-  catch {
+  } catch {
     alert("Registration Failed.");
-    res.redirect('/register')
+    res.redirect("/register");
   }
-
 }); //works now
 app.post("/shortUrls", async (req, res) => {
   await ShortUrl.create({ full: req.body.fullUrl });
