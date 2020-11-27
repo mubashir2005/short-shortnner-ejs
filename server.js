@@ -9,6 +9,14 @@ const passport = require("passport");
 const flash = require("express-flash");
 const session = require("express-session");
 
+mongoose.connect(
+  `mongodb://Mubashir:y4gQEVGPQKq0gQ9c@cluster0-shard-00-00.ochei.mongodb.net:27017,cluster0-shard-00-01.ochei.mongodb.net:27017,cluster0-shard-00-02.ochei.mongodb.net:27017/shortnner?ssl=true&replicaSet=atlas-5s5ecj-shard-0&authSource=admin&retryWrites=true&w=majority`,
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  }
+);
+
 const initializePassport = require("./passport-config");
 initializePassport(
   passport,
@@ -64,13 +72,6 @@ app.get("/register", (req, res) => {
 
 app.post("/register", async (req, res) => {
   try {
-    mongoose.connect(
-      `mongodb://Mubashir:y4gQEVGPQKq0gQ9c@cluster0-shard-00-00.ochei.mongodb.net:27017,cluster0-shard-00-01.ochei.mongodb.net:27017,cluster0-shard-00-02.ochei.mongodb.net:27017/${req.body.email}?ssl=true&replicaSet=atlas-5s5ecj-shard-0&authSource=admin&retryWrites=true&w=majority`,
-      {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-      }
-    );
     const hashedPassword = await bcrypt.hash(req.body.password, 10);
     await Auth.create({
       password: hashedPassword,
