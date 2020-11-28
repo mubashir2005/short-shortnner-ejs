@@ -59,9 +59,7 @@ app.get("/register", (req, res) => {
 app.post("/register", async (req, res) => {
   try {
     mongoose.connect(
-      `mongodb+srv://Mubashir:y4gQEVGPQKq0gQ9c@cluster0.ochei.mongodb.net/user${Math.floor(
-        Math.random() * 100000
-      )}?retryWrites=true&w=majority`,
+      `mongodb+srv://Mubashir:y4gQEVGPQKq0gQ9c@cluster0.ochei.mongodb.net/user${req.body.email}?retryWrites=true&w=majority`,
       {
         useNewUrlParser: true,
         useUnifiedTopology: true,
