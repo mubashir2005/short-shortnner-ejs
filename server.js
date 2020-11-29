@@ -7,6 +7,15 @@ const bcrypt = require("bcrypt");
 const Auth = require("./models/users");
 const { name } = require("ejs");
 
+const passport = require("passport");
+const GoogleStrategy = require("passport-google-oauth20").Strategy;
+
+passport.use(new GoogleStrategy());
+
+mongoose.connect('mongodb://Mubashir:y4gQEVGPQKq0gQ9c@cluster0-shard-00-00.x4m8k.mongodb.net:27017,cluster0-shard-00-01.x4m8k.mongodb.net:27017,cluster0-shard-00-02.x4m8k.mongodb.net:27017/shortnner?ssl=true&replicaSet=atlas-en1n15-shard-0&authSource=admin&retryWrites=true&w=majority', {
+  useNewUrlParser: true, useUnifiedTopology: true
+})
+
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: false }));
 
@@ -56,16 +65,10 @@ app.get("/register", (req, res) => {
   res.render("register.html");
 });
 
-app.post("/register", async (req, res) => {
+app.post("/register", async(req, res) => {
   try {
-    mongoose.connect(
-      `mongodb+srv://Mubashir:y4gQEVGPQKq0gQ9c@cluster0.ochei.mongodb.net/${req.body.email}?retryWrites=true&w=majority`,
-      {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-      }
-    );
-    const hashedPassword = await bcrypt.hash(req.body.password);
+
+    const hashedPassword = await bcrypt.hash(req.body.password,10);
 
     await Auth.create({
       password: hashedPassword,
@@ -76,6 +79,7 @@ app.post("/register", async (req, res) => {
     res.status(200);
   } catch {
     res.send("Registration Failed.");
+    res.redirect("/register");
   }
 }); //works now
 app.post("/shortUrls", async (req, res) => {
