@@ -7,10 +7,7 @@ const bcrypt = require("bcrypt");
 const Auth = require("./models/users");
 const { name } = require("ejs");
 
-const passport = require("passport");
-const GoogleStrategy = require("passport-google-oauth20").Strategy;
 
-passport.use(new GoogleStrategy());
 
 mongoose.connect('mongodb://Mubashir:y4gQEVGPQKq0gQ9c@cluster0-shard-00-00.x4m8k.mongodb.net:27017,cluster0-shard-00-01.x4m8k.mongodb.net:27017,cluster0-shard-00-02.x4m8k.mongodb.net:27017/shortnner?ssl=true&replicaSet=atlas-en1n15-shard-0&authSource=admin&retryWrites=true&w=majority', {
   useNewUrlParser: true, useUnifiedTopology: true
