@@ -7,11 +7,15 @@ const bcrypt = require("bcrypt");
 const Auth = require("./models/users");
 const { name } = require("ejs");
 
+//connecting to mongodb
 
-
-mongoose.connect('mongodb://Mubashir:y4gQEVGPQKq0gQ9c@cluster0-shard-00-00.x4m8k.mongodb.net:27017,cluster0-shard-00-01.x4m8k.mongodb.net:27017,cluster0-shard-00-02.x4m8k.mongodb.net:27017/shortnner?ssl=true&replicaSet=atlas-en1n15-shard-0&authSource=admin&retryWrites=true&w=majority', {
-  useNewUrlParser: true, useUnifiedTopology: true
-})
+mongoose.connect(
+  "mongodb://Mubashir:y4gQEVGPQKq0gQ9c@cluster0-shard-00-00.x4m8k.mongodb.net:27017,cluster0-shard-00-01.x4m8k.mongodb.net:27017,cluster0-shard-00-02.x4m8k.mongodb.net:27017/shortnner?ssl=true&replicaSet=atlas-en1n15-shard-0&authSource=admin&retryWrites=true&w=majority",
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  }
+);
 
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: false }));
@@ -37,6 +41,28 @@ app.engine("html", require("ejs").renderFile);
 app.get("/login", (req, res) => {
   res.render("login.html");
 });
+
+app.get("/register", (req, res) => {
+  res.render("register.html");
+});
+
+app.post("/register", async (req, res) => {
+  try {
+    const hashedPassword = await bcrypt.hash(req.body.password, 10);
+
+    await Auth.create({
+      password: hashedPassword,
+      email: req.body.email,
+      name: req.body.name,
+    });
+    res.redirect("/login");
+    res.status(200);
+  } catch {
+    res.send("Registration Failed.");
+    res.redirect("/register");
+  }
+}); //works now
+
 app.post("/login", async (req, res) => {
   const user = await Auth.findOne({
     name: req.body.name,
@@ -56,29 +82,8 @@ app.post("/login", async (req, res) => {
   } catch (e) {
     res.status(500).send(e);
   }
-});
+}); //doesn't work at all
 
-app.get("/register", (req, res) => {
-  res.render("register.html");
-});
-
-app.post("/register", async(req, res) => {
-  try {
-
-    const hashedPassword = await bcrypt.hash(req.body.password,10);
-
-    await Auth.create({
-      password: hashedPassword,
-      email: req.body.email,
-      name: req.body.name,
-    });
-    res.redirect("/login");
-    res.status(200);
-  } catch {
-    res.send("Registration Failed.");
-    res.redirect("/register");
-  }
-}); //works now
 app.post("/shortUrls", async (req, res) => {
   await ShortUrl.create({ full: req.body.fullUrl });
 
