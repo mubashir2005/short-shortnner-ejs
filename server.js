@@ -69,6 +69,7 @@ app.post("/login", async (req, res) => {
     password: req.body.password,
     email: req.body.email,
   });
+  console.log(user);
 
   if (user === null) {
     return res.status(400).send("No such User exists");

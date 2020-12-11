@@ -1,10 +1,17 @@
-module.exports = {
-  mongodb: {
-    dbURI:
-      " mongodb://Mubashir:y4gQEVGPQKq0gQ9c@cluster0-shard-00-00.x4m8k.mongodb.net",
+const mongoose = require("mongoose");
+
+const authSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true,
   },
-  google: {
-    clientID: "your_client_ID",
-    clientSecret: "your_client_secret",
+  email: {
+    type: String,
+    required: true,
   },
-};
+  password: {
+    type: String,
+    required: true,
+  },
+});
+module.exports = mongoose.model("Auth", authSchema);
