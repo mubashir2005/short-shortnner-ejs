@@ -64,7 +64,7 @@ app.post("/register", async (req, res) => {
 }); //works now
 
 app.post("/login", async (req, res) => {
-  const user = await Auth.findOne({
+  const user= await Auth.findOne({
     name: req.body.name,
     password: req.body.password,
     email: req.body.email,
