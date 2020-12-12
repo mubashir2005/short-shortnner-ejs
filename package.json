@@ -18,6 +18,8 @@
     "express-flash": "0.0.2",
     "express-openid-connect": "^2.0.0",
     "express-session": "^1.17.1",
+    "firebase": "^8.2.0",
+    "firebaseui": "^4.7.1",
     "global": "^4.4.0",
     "heroku": "^7.47.3",
     "mongoose": "^5.11.6",

@@ -12,14 +12,6 @@
 
     <!--    Vue CDN-->
     <script src="https://unpkg.com/vue@next"></script>
-    <!-- Google Auth config -->
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
-    <meta name="google-signin-scope" content="profile email" />
-    <meta
-      name="google-signin-client_id"
-      content="YOUR_CLIENT_ID.apps.googleusercontent.com"
-    />
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
   </head>
   <body>
     <h1>Login to your account</h1>
@@ -34,25 +26,32 @@
       </div>
       <button type="submit">Login</button>
     </form>
-    <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
-    <script>
-      function onSignIn(googleUser) {
-        // Useful data for your client-side scripts:
-        var profile = googleUser.getBasicProfile();
-        console.log("ID: " + profile.getId()); // Don't send this directly to your server!
-        console.log("Full Name: " + profile.getName());
-        console.log("Given Name: " + profile.getGivenName());
-        console.log("Family Name: " + profile.getFamilyName());
-        console.log("Image URL: " + profile.getImageUrl());
-        console.log("Email: " + profile.getEmail());
 
-        // The ID token you need to pass to your backend:
-        var id_token = googleUser.getAuthResponse().id_token;
-        console.log("ID Token: " + id_token);
-      }
-    </script>
     <h3>Don't have an account?</h3>
 
     <a href="/register"> Register here</a>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-analytics.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      var firebaseConfig = {
+        apiKey: "AIzaSyDfeNY1i-cJ5hnvUIH05b2srGH8Q61z-MQ",
+        authDomain: "short-shortnner-7112b.firebaseapp.com",
+        projectId: "short-shortnner-7112b",
+        storageBucket: "short-shortnner-7112b.appspot.com",
+        messagingSenderId: "28013134812",
+        appId: "1:28013134812:web:534e5c9b3aaf1a8077c519",
+        measurementId: "G-9M5NKCR0GN",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
   </body>
 </html>
