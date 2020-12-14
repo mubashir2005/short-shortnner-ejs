@@ -46,44 +46,52 @@ app.get("/register", (req, res) => {
   res.render("register.html");
 });
 
-app.post("/register", async (req, res) => {
-  try {
-    const hashedPassword = await bcrypt.hash(req.body.password, 10);
+var passport = require("passport");
+var GoogleStrategy = require("passport-google-oauth").OAuth2Strategy;
 
-    await Auth.create({
-      password: hashedPassword,
-      email: req.body.email,
-      name: req.body.name,
-    });
-    res.redirect("/login");
-    res.status(200);
-  } catch {
-    res.send("Registration Failed.");
-    res.redirect("/register");
-  }
-}); //works now
-
-app.post("/login", async (req, res) => {
-  const user= await Auth.findOne({
-    name: req.body.name,
-    password: req.body.password,
-    email: req.body.email,
-  });
-  console.log(user);
-
-  if (user === null) {
-    return res.status(400).send("No such User exists");
-  }
-  try {
-    if (await bcrypt.compare(req.body.password, user.password)) {
-      res.send("Successfully logged in.");
-    } else {
-      res.send("Incorrect User Information. Try again.");
+// Use the GoogleStrategy within Passport.
+//   Strategies in Passport require a `verify` function, which accept
+//   credentials (in this case, an accessToken, refreshToken, and Google
+//   profile), and invoke a callback with a user object.
+passport.use(
+  new GoogleStrategy(
+    {
+      clientID: '28013134812-qc5lbogacg4cf42etiruqveskh8vaqgh.apps.googleusercontent.com',
+      clientSecret: '8RMMnYHtNF1If5fw-njXYJUV',
+      callbackURL: "http://www.example.com/auth/google/callback",
+    },
+    function (accessToken, refreshToken, profile, done) {
+      User.findOrCreate({ googleId: profile.id }, function (err, user) {
+        return done(err, user);
+      });
     }
-  } catch (e) {
-    res.status(500).send(e);
+  )
+);
+
+// GET /auth/google
+//   Use passport.authenticate() as route middleware to authenticate the
+//   request.  The first step in Google authentication will involve
+//   redirecting the user to google.com.  After authorization, Google
+//   will redirect the user back to this application at /auth/google/callback
+app.get(
+  "/auth/google",
+  passport.authenticate("google", {
+    scope: ["https://www.googleapis.com/auth/plus.login"],
+  })
+);
+
+// GET /auth/google/callback
+//   Use passport.authenticate() as route middleware to authenticate the
+//   request.  If authentication fails, the user will be redirected back to the
+//   login page.  Otherwise, the primary route function function will be called,
+//   which, in this example, will redirect the user to the home page.
+app.get(
+  "/auth/google/callback",
+  passport.authenticate("google", { failureRedirect: "/login" }),
+  function (req, res) {
+    res.redirect("/");
   }
-}); //doesn't work at all
+);
 
 app.post("/shortUrls", async (req, res) => {
   await ShortUrl.create({ full: req.body.fullUrl });
@@ -103,4 +111,4 @@ app.get("/:shortUrl", async (req, res) => {
   res.redirect(shortUrl.full);
 });
 
-app.listen(3000, () => console.log("running at 3000 port"));
+app.listen(process.env.PORT || 3000, () => console.log("running at 3000 port"));
