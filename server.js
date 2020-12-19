@@ -20,32 +20,21 @@ mongoose.connect(
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: false }));
 
-app.get("/s", async (req, res) => {
+app.get("/", async (req, res) => {
   const shortUrls = await ShortUrl.find();
   res.render("index", { shortUrls: shortUrls });
 });
-app.get("/in", async (req, res) => {
-  res.send(
-    "<div><h1> Log in to use Short Shortnner </h1><h4><a href='https://short-shortnner.vercel.app/'>Go back to Short Shortnner</a></h4><h4><a href='https://shortnner.herokuapp.com/'>Start Shortening your URLs</a></h4></div>"
-  );
-});
+
 app.set("views", __dirname + "/views");
 app.engine("html", require("ejs").renderFile);
 
-app.get("/", (req, res) => {
-  res.render("app.html");
-});
-app.set("views", __dirname + "/views");
-app.engine("html", require("ejs").renderFile);
-
-app.get("/login", (req, res) => {
-  res.render("login.html");
+app.get("/auth", (req, res) => {
+    res.render("auth.html");
 });
 
-app.get("/register", (req, res) => {
-  res.render("register.html");
-});
+//passport js
 
+//google auth
 var passport = require("passport");
 var GoogleStrategy = require("passport-google-oauth").OAuth2Strategy;
 
@@ -56,9 +45,10 @@ var GoogleStrategy = require("passport-google-oauth").OAuth2Strategy;
 passport.use(
   new GoogleStrategy(
     {
-      clientID: '28013134812-qc5lbogacg4cf42etiruqveskh8vaqgh.apps.googleusercontent.com',
-      clientSecret: '8RMMnYHtNF1If5fw-njXYJUV',
-      callbackURL: "http://www.example.com/auth/google/callback",
+      clientID:
+        "220565751325-tort2ob8nqj99cohi8al4st2ud217ml3.apps.googleusercontent.com",
+      clientSecret: "GfSDog4jKY7r-Z59H1EgvlBq",
+      callbackURL: "http://localhost:3000/auth/google/callback",
     },
     function (accessToken, refreshToken, profile, done) {
       User.findOrCreate({ googleId: profile.id }, function (err, user) {
@@ -111,4 +101,4 @@ app.get("/:shortUrl", async (req, res) => {
   res.redirect(shortUrl.full);
 });
 
-app.listen(process.env.PORT || 3000, () => console.log("running at 3000 port"));
+app.listen(process.env.PORT || 3000, () => console.log("running at 300 port"));
