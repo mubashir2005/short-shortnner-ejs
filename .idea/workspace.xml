@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2347b7d3-01ae-4b5d-8c7d-7bfcf1520650" name="Default Changelist" comment="fixed auth but ran into errors">
-      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/auth.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/auth.html" afterDir="false" />
-    </list>
+    <list default="true" id="2347b7d3-01ae-4b5d-8c7d-7bfcf1520650" name="Default Changelist" comment="fixed auth works" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
+      </GitPushTagMode>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1lsEE0r35OJCHIjoMSAjBZpjBI3" />
@@ -37,7 +40,7 @@
       <updated>1608377283573</updated>
       <workItem from="1608377285192" duration="870000" />
       <workItem from="1608378476495" duration="1985000" />
-      <workItem from="1608384368563" duration="1753000" />
+      <workItem from="1608384368563" duration="2089000" />
     </task>
     <task id="LOCAL-00001" summary="fixed auth but ran into errors">
       <created>1608384424707</created>
@@ -46,7 +49,21 @@
       <option name="project" value="LOCAL" />
       <updated>1608384424707</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="authentication now works">
+      <created>1608386228716</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1608386228716</updated>
+    </task>
+    <task id="LOCAL-00003" summary="fixed auth works">
+      <created>1608386433925</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1608386433925</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -66,6 +83,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="fixed auth but ran into errors" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed auth but ran into errors" />
+    <MESSAGE value="authentication now works" />
+    <MESSAGE value="fixed auth works" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed auth works" />
   </component>
 </project>
