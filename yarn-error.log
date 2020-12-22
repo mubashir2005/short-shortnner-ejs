@@ -1,0 +1,72 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Users\hp\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add cookie-parser --dev
+
+PATH: 
+  C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\nodejs\;C:\ProgramData\chocolatey\bin;C:\Program Files\Git\cmd;C:\Program Files (x86)\Bitvise SSH Client;C:\Program Files\dotnet\;C:\Users\hp\AppData\Local\Programs\Python\Python39\Scripts\;C:\Users\hp\AppData\Local\Programs\Python\Python39\;C:\Users\hp\AppData\Local\Microsoft\WindowsApps;C:\Users\hp\AppData\Roaming\npm;flutter\bin;C:\Users\hp\AppData\Local\GitHubDesktop\bin;C:\Users\hp\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\hp\AppData\Local\Microsoft\WindowsApps;C:\Program Files\JetBrains\PyCharm Community Edition 2020.2.3\bin;C:\Users\hp\.dotnet\tools;C:\Users\hp\AppData\Local\atom\bin;C:\Program Files\heroku\bin
+
+Yarn version: 
+  1.22.5
+
+Node version: 
+  12.18.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: EPERM: operation not permitted, unlink 'C:\Users\hp\short.nner\node_modules\node\bin\node.exe'
+
+npm manifest: 
+  {
+    "name": "short.nner",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "dev": "nodemon server.js"
+    },
+    "author": "Mohammed Mubashir Hasan",
+    "license": "ISC",
+    "dependencies": {
+      "autoprefixer": "^10.1.0",
+      "bcrypt": "^5.0.0",
+      "body-parser": "^1.19.0",
+      "cors": "^2.8.5",
+      "deploy": "^1.0.3",
+      "dotenv": "^8.2.0",
+      "ejs": "^3.1.5",
+      "express": "^4.17.1",
+      "express-flash": "0.0.2",
+      "express-openid-connect": "^2.0.0",
+      "express-partials": "^0.3.0",
+      "express-session": "^1.17.1",
+      "firebase": "^8.2.0",
+      "firebaseui": "^4.7.1",
+      "global": "^4.4.0",
+      "heroku": "^7.47.3",
+      "materialize-css": "^1.0.0-rc.2",
+      "method-override": "^3.0.0",
+      "mongoose": "^5.11.6",
+      "node": "^15.2.1",
+      "passport": "^0.4.1",
+      "passport-github2": "^0.1.12",
+      "passport-google-oauth": "^2.0.0",
+      "passport-google-oauth20": "^2.0.0",
+      "passport-local": "^1.0.0",
+      "pm2": "^4.5.0",
+      "postcss": "^8.2.1",
+      "shortid": "^2.2.16",
+      "tailwindcss": "^2.0.2",
+      "uikit": "^3.6.3",
+      "util": "^0.12.3"
+    },
+    "devDependencies": {
+      "nodemon": "^2.0.6"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
