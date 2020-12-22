@@ -44,12 +44,41 @@ passport.use(
             callbackURL: "http://localhost:3000/auth/github/callback",
         },
         function(accessToken, refreshToken, profile, done) {
-            console.log(profile)
+      
+            console.log(profile);
+                done(null, profile.id);
+
+
         }
     )
 )
+// Configure Passport authenticated session persistence.
+//
+// In order to restore authentication state across HTTP requests, Passport needs
+// to serialize users into and deserialize users out of the session.  In a
+// production-quality application, this would typically be as simple as
+// supplying the user ID when serializing, and querying the user record by ID
+// from the database when deserializing.  However, due to the fact that this
+// example does not have a database, the complete Facebook profile is serialized
+// and deserialized.
+passport.serializeUser(function(user, done) {
+    done(null, user);
+});
+
+passport.deserializeUser(function(obj, done) {
+    done(null, obj);
+});
+
+app.use(require('body-parser').urlencoded({ extended: true }));
+app.use(require('express-session')({ secret: 'keyboard cat', resave: true, saveUninitialized: true }));
+
+// Initialize Passport and restore authentication state, if any, from the
+// session.
+app.use(passport.initialize());
+app.use(passport.session());
+
 app.get(
-    "/auth/github",
+    "/auth/github/",
     passport.authenticate("github", { scope: ["user:email"] })
 );
 
@@ -61,6 +90,7 @@ app.get(
         res.redirect("/");
     }
 );
+
 
 app.post("/shortUrls", async(req, res) => {
     await ShortUrl.create({ full: req.body.fullUrl });
