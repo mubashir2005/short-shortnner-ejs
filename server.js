@@ -36,22 +36,17 @@ app.get("/auth", (req, res) => {
     res.render("auth.html");
 });
 
-
-passport.use(
-    new GitHubStrategy({
-            clientID: "e24a3ac1874eb843555e",
-            clientSecret: "f93532099cc9ea7a254d3763fc85bf3e76933810",
-            callbackURL: "http://localhost:3000/auth/github/callback",
-        },
-        function(accessToken, refreshToken, profile, done) {
-      
-            console.log(profile);
-                done(null, profile.id);
-
-
-        }
-    )
-)
+passport.use(new GitHubStrategy({
+        clientID: "e24a3ac1874eb843555e",
+        clientSecret: "f93532099cc9ea7a254d3763fc85bf3e76933810",
+        callbackURL: "http://localhost:3000/auth/github/callback",
+    },
+    function(accessToken, refreshToken, profile, done) {
+        Auth.create({ name:profile.displayName,email: profile._json.email,GithubId: profile.id }, function (err, user) {
+            return done(err, user);
+        });
+    }
+));
 // Configure Passport authenticated session persistence.
 //
 // In order to restore authentication state across HTTP requests, Passport needs
@@ -90,6 +85,31 @@ app.get(
         res.redirect("/");
     }
 );
+var GoogleStrategy = require( 'passport-google-oauth2' ).Strategy;
+
+passport.use(new GoogleStrategy({
+        clientID:    '220565751325-99unjjb3n77re39faolb1iks9u3n0tle.apps.googleusercontent.com',
+        clientSecret: 'xJLEn_2v1VQ3UPxjGahh2QtD',
+        callbackURL: "http://localhost:3000/auth/google/callback",
+        passReqToCallback   : true
+    },
+    function(request, accessToken, refreshToken, profile, done) {
+        Auth.create({name:profile.displayName, email:profile.email, GoogleId: profile.id }, function (err, user) {
+            return done(err, user);
+        });
+    }
+));
+
+app.get('/auth/google',
+    passport.authenticate('google', { scope:
+            [ 'email', 'profile' ] }
+    ));
+
+app.get( '/auth/google/callback',
+    passport.authenticate( 'google', {
+        successRedirect: '/',
+        failureRedirect: '/auth/google/failure'
+    }));
 
 
 app.post("/shortUrls", async(req, res) => {

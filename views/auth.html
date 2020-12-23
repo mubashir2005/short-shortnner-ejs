@@ -11,8 +11,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
 <!--    Google Auth stuff-->
     <script src="https://apis.google.com/js/platform.js" async defer></script>
-    <meta name="google-signin-client_id" content="220565751325-99unjjb3n77re39faolb1iks9u3n0tle.apps.googleusercontent.com">
-
 
     <style>
 
@@ -25,27 +23,9 @@
 
 <body>
     <h1 class="text-xl font-black  my-9 mx-auto text-center mx-auto">Authenticate to start using</h1>
-    <a class="g-signin2" data-onsuccess="onSignIn" ></a>
-    <a href="#" onClick="signOut();">Sign out</a>
+    <a class="" href="/auth/google/" >Sign In with Google</a><br>
+    <a class="" href="/auth/github/" >Sign In with Github</a><br>
 
-
-    <script>
-        function onSignIn(googleUser) {
-            var profile = googleUser.getBasicProfile();
-            console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-            console.log('Name: ' + profile.getName());
-            console.log('Image URL: ' + profile.getImageUrl());
-            console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-
-            // console.log(googleUser)
-        }
-        function signOut() {
-            var auth2 = gapi.auth2.getAuthInstance();
-            auth2.signOut().then(function () {
-                console.log('User signed out.');
-            });
-        }
-    </script>
 </body>
 
 </html>
