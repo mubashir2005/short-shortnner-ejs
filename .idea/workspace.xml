@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="520fac60-5238-43c3-b02d-b3d30dacc8bd" name="Default Changelist" comment="now i can send auth data to my db">
-      <change beforePath="$PROJECT_DIR$/views/index.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/index.ejs" afterDir="false" />
+    <list default="true" id="520fac60-5238-43c3-b02d-b3d30dacc8bd" name="Default Changelist" comment="now shows email associated with link">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +51,7 @@
       <workItem from="1608614318873" duration="649000" />
       <workItem from="1608628458712" duration="1296000" />
       <workItem from="1608727811905" duration="2919000" />
-      <workItem from="1608907006744" duration="3006000" />
+      <workItem from="1608907006744" duration="3702000" />
     </task>
     <task id="LOCAL-00001" summary="started working on auth using github got into a major error.">
       <created>1608480744720</created>
@@ -102,7 +102,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608909911454</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="now shows email associated with link">
+      <created>1608910158374</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1608910158374</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -129,6 +136,7 @@
     <MESSAGE value="auth with google and github works now and i can now send data to my db thanks to that awesome guy from the other day" />
     <MESSAGE value="some changes" />
     <MESSAGE value="now i can send auth data to my db" />
-    <option name="LAST_COMMIT_MESSAGE" value="now i can send auth data to my db" />
+    <MESSAGE value="now shows email associated with link" />
+    <option name="LAST_COMMIT_MESSAGE" value="now shows email associated with link" />
   </component>
 </project>
