@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="520fac60-5238-43c3-b02d-b3d30dacc8bd" name="Default Changelist" comment="auth with google and github works now and i can now send data to my db thanks to that awesome guy from the other day">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/shortUrl.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/shortUrl.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/users.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
+    <list default="true" id="520fac60-5238-43c3-b02d-b3d30dacc8bd" name="Default Changelist" comment="now i can send auth data to my db">
       <change beforePath="$PROJECT_DIR$/views/index.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/index.ejs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -55,7 +51,7 @@
       <workItem from="1608614318873" duration="649000" />
       <workItem from="1608628458712" duration="1296000" />
       <workItem from="1608727811905" duration="2919000" />
-      <workItem from="1608907006744" duration="2707000" />
+      <workItem from="1608907006744" duration="3006000" />
     </task>
     <task id="LOCAL-00001" summary="started working on auth using github got into a major error.">
       <created>1608480744720</created>
@@ -99,7 +95,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608907037453</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="now i can send auth data to my db">
+      <created>1608909911454</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1608909911454</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -125,6 +128,7 @@
     <MESSAGE value="will try to get auth data to database. For now i'll style the auth page" />
     <MESSAGE value="auth with google and github works now and i can now send data to my db thanks to that awesome guy from the other day" />
     <MESSAGE value="some changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="some changes" />
+    <MESSAGE value="now i can send auth data to my db" />
+    <option name="LAST_COMMIT_MESSAGE" value="now i can send auth data to my db" />
   </component>
 </project>
