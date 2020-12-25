@@ -16,6 +16,18 @@ const shortUrlSchema = new mongoose.Schema({
     required: true,
     default: 0,
   },
+  GivenEmail: {
+    type: String,
+    required:true,
+  },
+  realEmail: {
+    type: String,
+    required:true,
+  },
+  name: {
+    type: String,
+    required:true
+  },
 });
 
 module.exports = mongoose.model("ShortUrl", shortUrlSchema);

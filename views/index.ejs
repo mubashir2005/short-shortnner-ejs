@@ -15,30 +15,30 @@
         * {
             font-family: "Lato", sans-serif;
         }
-        
+
         .title {
             font-family: "Lato", sans-serif;
             font-size: 40px;
             text-align: center;
             font-weight: bold;
         }
-        
+
         tbody {
             font-weight: normal;
             margin-top: 100px;
         }
-        
+
         .styled {
             font-family: "Courgette", cursive;
         }
-        
+
         p {
             text-align: center;
             color: darkcyan;
             padding: 50px;
             margin-top: 50px;
         }
-        
+
         @media only screen and (min-width: 900px) {
             table {
                 margin-top: 100px;
@@ -51,9 +51,11 @@
 <body>
     <div class="container">
         <h1 class="title">Shorten your URLs for free</h1>
+        <h5 name="realName">Hello <%=userName %>!</h5>
         <form action="/shortUrls" method="POST" class="my-4 form-inline">
             <label for="fullUrl" class="sr-only">Url</label>
             <input required placeholder="Type or Paste your URL here" type="url" name="fullUrl" id="fullUrl" class="form-control col mr-2" />
+            <input type="email" required placeholder="Enter email to be associated with this link." name="email" id="email" class="form-control col mr-2"/>
             <button class="btn btn-primary" type="submit">Shorten</button>
         </form>
 

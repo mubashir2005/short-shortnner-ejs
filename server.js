@@ -24,10 +24,7 @@ mongoose.connect(
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: false }));
 
-app.get("/", async(req, res) => {
-    const shortUrls = await ShortUrl.find();
-    res.render("index", { shortUrls: shortUrls });
-});
+
 
 app.set("views", __dirname + "/views");
 app.engine("html", require("ejs").renderFile);
@@ -45,6 +42,16 @@ passport.use(new GitHubStrategy({
         Auth.create({ name:profile.displayName,email: profile._json.email,GithubId: profile.id }, function (err, user) {
             return done(err, user);
         });
+        app.get("/", async(req, res) => {
+            const shortUrls = await ShortUrl.find();
+            res.render("index", { shortUrls: shortUrls , userEmail:profile._json.email, userName:profile.displayName,id:profile.id});
+        });
+        app.post("/shortUrls", async(req, res) => {
+            await ShortUrl.create({ full: req.body.fullUrl ,GivenEmail:req.body.email,name:profile.displayName,realEmail:profile.email});
+
+            res.redirect("/");
+        });
+
     }
 ));
 // Configure Passport authenticated session persistence.
@@ -97,6 +104,15 @@ passport.use(new GoogleStrategy({
         Auth.create({name:profile.displayName, email:profile.email, GoogleId: profile.id }, function (err, user) {
             return done(err, user);
         });
+        app.get("/", async(req, res) => {
+            const shortUrls = await ShortUrl.find();
+            res.render("index", { shortUrls: shortUrls , userEmail:profile.email, userName:profile.displayName,id:profile.id});
+        });
+        app.post("/shortUrls", async(req, res) => {
+            await ShortUrl.create({ full: req.body.fullUrl ,GivenEmail:req.body.email,name:profile.displayName,realEmail:profile.email});
+
+            res.redirect("/");
+        });
     }
 ));
 
@@ -108,15 +124,11 @@ app.get('/auth/google',
 app.get( '/auth/google/callback',
     passport.authenticate( 'google', {
         successRedirect: '/',
-        failureRedirect: '/auth/google/failure'
+        failureRedirect: '/auth/'
     }));
 
 
-app.post("/shortUrls", async(req, res) => {
-    await ShortUrl.create({ full: req.body.fullUrl });
 
-    res.redirect("/");
-});
 
 app.get("/:shortUrl", async(req, res) => {
     const shortUrl = await ShortUrl.findOne({ short: req.params.shortUrl });
