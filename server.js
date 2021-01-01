@@ -39,12 +39,14 @@ passport.use(new GitHubStrategy({
         callbackURL: "http://localhost:3000/auth/github/callback",
     },
     function(accessToken, refreshToken, profile, done) {
+        let email = profile._json.email
         Auth.create({ name:profile.displayName,email: profile._json.email,GithubId: profile.id }, function (err, user) {
             return done(err, user);
         });
         app.get("/", async(req, res) => {
             const shortUrls = await ShortUrl.find();
-            res.render("index", { shortUrls: shortUrls , userEmail:profile._json.email, userName:profile.displayName,id:profile.id});
+            const Url = await ShortUrl.find({ realEmail: email});
+            res.render("index", { shortUrls: shortUrls ,Url:Url, userEmail:profile._json.email, userName:profile.displayName,id:profile.id,async: true});
         });
         app.post("/shortUrls", async(req, res) => {
             await ShortUrl.create({ full: req.body.fullUrl ,GivenEmail:req.body.email,name:profile.displayName,realEmail:profile.email});
@@ -101,12 +103,14 @@ passport.use(new GoogleStrategy({
         passReqToCallback   : true
     },
     function(request, accessToken, refreshToken, profile, done) {
+        let email= profile.email
         Auth.create({name:profile.displayName, email:profile.email, GoogleId: profile.id }, function (err, user) {
             return done(err, user);
         });
         app.get("/", async(req, res) => {
             const shortUrls = await ShortUrl.find();
-            res.render("index", { shortUrls: shortUrls , userEmail:profile.email, userName:profile.displayName,id:profile.id});
+            const Url = await ShortUrl.findOne({ realEmail: email });
+            res.render("index", { shortUrls: shortUrls ,Url:Url, userEmail:profile.email, userName:profile.displayName,id:profile.id,async: true});
         });
         app.post("/shortUrls", async(req, res) => {
             await ShortUrl.create({ full: req.body.fullUrl ,GivenEmail:req.body.email,name:profile.displayName,realEmail:profile.email});
