@@ -69,21 +69,21 @@
                 </tr>
             </thead>
             <tbody>
-            <%= Url.forEach(shortUrl => { %>
-                    <tr>
-                        <td>
-                            <a href="<%= shortUrl.full %>">
-                                <%= shortUrl.full %>
-                            </a>
-                        </td>
-                        <td>
-                            <a href="<%= shortUrl.short %>">localhost:3000/<%= shortUrl.short %></a
-              >
-            </td>
-            <td><%= shortUrl.clicks %></td>
-            <td><%= shortUrl.GivenEmail %>
-          </tr>
-         <% }) %>
+            <% shortUrls.forEach(shortUrl => { %>
+                <tr>
+                    <td>
+                        <a href="<%= shortUrl.full %>">
+                            <%= shortUrl.full %>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="<%= shortUrl.short %>">localhost:3000/<%= shortUrl.short %></a
+                        >
+                    </td>
+                    <td><%= shortUrl.clicks %></td>
+                    <td><%= shortUrl.GivenEmail %>
+                </tr>
+            <% }) %>
         </tbody>
       </table>
       <a href="https://short-nner.vercel.app/">Back to Site</a>

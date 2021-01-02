@@ -6,6 +6,7 @@ const app = express();
 const bcrypt = require("bcrypt");
 const Auth = require("./models/users");
 const { name } = require("ejs");
+const ejsLint = require('ejs-lint');
 
 //auth config
 
@@ -43,10 +44,11 @@ passport.use(new GitHubStrategy({
         Auth.create({ name:profile.displayName,email: profile._json.email,GithubId: profile.id }, function (err, user) {
             return done(err, user);
         });
+
         app.get("/", async(req, res) => {
             const shortUrls = await ShortUrl.find();
-            const Url = await ShortUrl.find({ realEmail: email});
-            res.render("index", { shortUrls: shortUrls ,Url:Url, userEmail:profile._json.email, userName:profile.displayName,id:profile.id,async: true});
+            const url = await ShortUrl.find({ realEmail: email});
+            res.render("index", { shortUrls: shortUrls ,url:url, userEmail:profile._json.email, userName:profile.displayName,id:profile.id,async: true});
         });
         app.post("/shortUrls", async(req, res) => {
             await ShortUrl.create({ full: req.body.fullUrl ,GivenEmail:req.body.email,name:profile.displayName,realEmail:profile.email});
@@ -109,8 +111,8 @@ passport.use(new GoogleStrategy({
         });
         app.get("/", async(req, res) => {
             const shortUrls = await ShortUrl.find();
-            const Url = await ShortUrl.findOne({ realEmail: email });
-            res.render("index", { shortUrls: shortUrls ,Url:Url, userEmail:profile.email, userName:profile.displayName,id:profile.id,async: true});
+            const url = await ShortUrl.find({ realEmail: email });
+            res.render("index", { shortUrls: shortUrls ,url:url, userEmail:profile.email, userName:profile.displayName,id:profile.id,async: true});
         });
         app.post("/shortUrls", async(req, res) => {
             await ShortUrl.create({ full: req.body.fullUrl ,GivenEmail:req.body.email,name:profile.displayName,realEmail:profile.email});
