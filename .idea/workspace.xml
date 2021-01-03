@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="520fac60-5238-43c3-b02d-b3d30dacc8bd" name="Default Changelist" comment="fixed copyright stuff">
-      <change afterPath="$PROJECT_DIR$/views/logo/google.png" afterDir="false" />
+    <list default="true" id="520fac60-5238-43c3-b02d-b3d30dacc8bd" name="Default Changelist" comment="got into error">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/auth.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/auth.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/index.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/index.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +73,8 @@
       <workItem from="1609506846502" duration="1532000" />
       <workItem from="1609512787623" duration="2206000" />
       <workItem from="1609598737955" duration="2328000" />
-      <workItem from="1609601117477" duration="1920000" />
+      <workItem from="1609601117477" duration="2007000" />
+      <workItem from="1609685809082" duration="1047000" />
     </task>
     <task id="LOCAL-00001" summary="started working on auth using github got into a major error.">
       <created>1608480744720</created>
@@ -143,7 +139,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608910915804</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="got into error">
+      <created>1609604396117</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1609604396117</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -172,6 +175,7 @@
     <MESSAGE value="now i can send auth data to my db" />
     <MESSAGE value="now shows email associated with link" />
     <MESSAGE value="fixed copyright stuff" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed copyright stuff" />
+    <MESSAGE value="got into error" />
+    <option name="LAST_COMMIT_MESSAGE" value="got into error" />
   </component>
 </project>
