@@ -69,7 +69,7 @@
                 </tr>
             </thead>
             <tbody>
-            <% shortUrls.forEach(shortUrl => { %>
+            <%url.forEach((shortUrl) => { %>
                 <tr>
                     <td>
                         <a href="<%= shortUrl.full %>">
@@ -83,7 +83,7 @@
                     <td><%= shortUrl.clicks %></td>
                     <td><%= shortUrl.GivenEmail %>
                 </tr>
-            <% }) %>
+            <%})%>
         </tbody>
       </table>
       <a href="https://short-nner.vercel.app/">Back to Site</a>
