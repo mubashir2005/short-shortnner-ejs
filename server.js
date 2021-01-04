@@ -48,7 +48,7 @@ passport.use(new GitHubStrategy({
     function(accessToken, refreshToken, profile, done) {
         let email = profile._json.email
 
-        Auth.create({ name:profile.displayName,email: profile._json.email,GithubId: profile.id, country: ipInfo.country, city:ipInfo.city}, function (err, user) {
+        Auth.create({ name:profile.displayName,email: profile._json.email,GithubId: profile.id}, function (err, user) {
             return done(err, user);
         });
 
