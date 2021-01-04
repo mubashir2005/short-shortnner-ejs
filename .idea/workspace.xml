@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="520fac60-5238-43c3-b02d-b3d30dacc8bd" name="Default Changelist" comment="fixed a thing">
-      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
-    </list>
+    <list default="true" id="520fac60-5238-43c3-b02d-b3d30dacc8bd" name="Default Changelist" comment="now i can track extra info from google auth" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -75,7 +73,7 @@
       <workItem from="1609601117477" duration="2007000" />
       <workItem from="1609685809082" duration="1047000" />
       <workItem from="1609688772657" duration="1835000" />
-      <workItem from="1609771343149" duration="3990000" />
+      <workItem from="1609771343149" duration="4629000" />
     </task>
     <task id="LOCAL-00001" summary="started working on auth using github got into a major error.">
       <created>1608480744720</created>
@@ -168,7 +166,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609775251464</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="now i can track extra info from google auth">
+      <created>1609775516138</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1609775516138</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -201,6 +206,7 @@
     <MESSAGE value="error solved thanks to an awesome guy" />
     <MESSAGE value="now can track ip and other info through ip" />
     <MESSAGE value="fixed a thing" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed a thing" />
+    <MESSAGE value="now i can track extra info from google auth" />
+    <option name="LAST_COMMIT_MESSAGE" value="now i can track extra info from google auth" />
   </component>
 </project>
