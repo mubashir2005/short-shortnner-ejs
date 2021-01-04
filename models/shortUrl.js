@@ -28,6 +28,11 @@ const shortUrlSchema = new mongoose.Schema({
     type: String,
     required:true
   },
+  ip:{
+    type: String,
+    required: true
+  }
+
 });
 
 module.exports = mongoose.model("ShortUrl", shortUrlSchema);

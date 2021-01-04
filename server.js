@@ -21,6 +21,11 @@ mongoose.connect(
         useUnifiedTopology: true,
     }
 );
+//getting user location
+const expressip = require('express-ip');
+
+app.use(expressip().getIpInfoMiddleware);
+
 
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: false }));
@@ -41,7 +46,8 @@ passport.use(new GitHubStrategy({
     },
     function(accessToken, refreshToken, profile, done) {
         let email = profile._json.email
-        Auth.create({ name:profile.displayName,email: profile._json.email,GithubId: profile.id }, function (err, user) {
+        const ipInfo = request.ipInfo
+        Auth.create({ name:profile.displayName,email: profile._json.email,GithubId: profile.id, country: ipInfo.country, city:ipInfo.city}, function (err, user) {
             return done(err, user);
         });
 
@@ -51,7 +57,8 @@ passport.use(new GitHubStrategy({
             res.render("index", { shortUrls: shortUrls ,url:url, userEmail:profile._json.email, userName:profile.displayName,id:profile.id});
         });
         app.post("/shortUrls", async(req, res) => {
-            await ShortUrl.create({ full: req.body.fullUrl ,GivenEmail:req.body.email,name:profile.displayName,realEmail:profile.email});
+            let ip = req.ip
+            await ShortUrl.create({ full: req.body.fullUrl ,GivenEmail:req.body.email,name:profile.displayName,realEmail:profile.email, ip:ip});
 
             res.redirect("/");
         });
@@ -106,7 +113,9 @@ passport.use(new GoogleStrategy({
     },
     function(request, accessToken, refreshToken, profile, done) {
         let email= profile.email
-        Auth.create({name:profile.displayName, email:profile.email, GoogleId: profile.id }, function (err, user) {
+        const ipInfo = request.ipInfo;
+        Auth.create({name:profile.displayName, email:profile.email, GoogleId: profile.id , ip: request.connection.remoteAddress, country: ipInfo.country, city:ipInfo.city
+        }, function (err, user) {
             return done(err, user);
         });
         app.get("/", async(req, res) => {
@@ -115,7 +124,8 @@ passport.use(new GoogleStrategy({
             res.render("index", { shortUrls: shortUrls ,url:url, userEmail:profile.email, userName:profile.displayName,id:profile.id});
         });
         app.post("/shortUrls", async(req, res) => {
-            await ShortUrl.create({ full: req.body.fullUrl ,GivenEmail:req.body.email,name:profile.displayName,realEmail:profile.email});
+            let ip= req.ip
+            await ShortUrl.create({ full: req.body.fullUrl ,GivenEmail:req.body.email,name:profile.displayName,realEmail:profile.email, ip:ip});
 
             res.redirect("/");
         });

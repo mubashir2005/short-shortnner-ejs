@@ -14,6 +14,16 @@ const authSchema = new mongoose.Schema({
   },
   GithubId:{
     type: Number,
+  },
+  ip:{
+    type: String,
+    required: true
+  },
+  country:{
+    type: String,
+  },
+  city:{
+    type:String,
   }
 
 
