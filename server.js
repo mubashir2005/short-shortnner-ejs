@@ -37,6 +37,7 @@ app.engine("html", require("ejs").renderFile);
 
 app.get("/auth", (req, res) => {
     res.render("auth.html");
+    const ipInfo = request.ipInfo
 });
 
 passport.use(new GitHubStrategy({
@@ -46,7 +47,7 @@ passport.use(new GitHubStrategy({
     },
     function(accessToken, refreshToken, profile, done) {
         let email = profile._json.email
-        const ipInfo = request.ipInfo
+
         Auth.create({ name:profile.displayName,email: profile._json.email,GithubId: profile.id, country: ipInfo.country, city:ipInfo.city}, function (err, user) {
             return done(err, user);
         });
