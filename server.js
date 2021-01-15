@@ -97,7 +97,7 @@ app.get(
 
 app.get(
     "/auth/github/callback",
-    passport.authenticate("github", { failureRedirect: "/login" }),
+    passport.authenticate("github", { failureRedirect: "/auth" }),
     function(req, res) {
         // Successful authentication, redirect home.
         res.redirect("/");
@@ -108,7 +108,7 @@ var GoogleStrategy = require( 'passport-google-oauth2' ).Strategy;
 passport.use(new GoogleStrategy({
         clientID:    '220565751325-99unjjb3n77re39faolb1iks9u3n0tle.apps.googleusercontent.com',
         clientSecret: 'xJLEn_2v1VQ3UPxjGahh2QtD',
-        callbackURL: "https://short-nner.herokuapp.comauth/google/callback",
+        callbackURL: "https://short-nner.herokuapp.com/auth/google/callback",
         passReqToCallback   : true
     },
     function(request, accessToken, refreshToken, profile, done) {
