@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="520fac60-5238-43c3-b02d-b3d30dacc8bd" name="Default Changelist" comment="trying to fix ejs render error">
-      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
-    </list>
+    <list default="true" id="520fac60-5238-43c3-b02d-b3d30dacc8bd" name="Default Changelist" comment="got into ejs error" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -77,7 +75,7 @@
       <workItem from="1609688772657" duration="1835000" />
       <workItem from="1609771343149" duration="4968000" />
       <workItem from="1609776515311" duration="62000" />
-      <workItem from="1610893117296" duration="2860000" />
+      <workItem from="1610893117296" duration="2965000" />
     </task>
     <task id="LOCAL-00001" summary="started working on auth using github got into a major error.">
       <created>1608480744720</created>
@@ -212,7 +210,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610895742029</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="got into ejs error">
+      <created>1610896105130</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1610896105130</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -250,7 +255,8 @@
     <MESSAGE value="trying to fix an error" />
     <MESSAGE value="fixing another error" />
     <MESSAGE value="trying to fix ejs render error" />
-    <option name="LAST_COMMIT_MESSAGE" value="trying to fix ejs render error" />
+    <MESSAGE value="got into ejs error" />
+    <option name="LAST_COMMIT_MESSAGE" value="got into ejs error" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

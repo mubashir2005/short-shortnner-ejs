@@ -5,7 +5,6 @@ const ShortUrl = require("./models/shortUrl");
 const app = express();
 const bcrypt = require("bcrypt");
 const Auth = require("./models/users");
-const ejs= require("ejs");
 const ejsLint = require('ejs-lint');
 
 //auth config
