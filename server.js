@@ -42,7 +42,6 @@ app.get("/", (req, res) => {
 
 app.set('view engine','ejs');
 
-app.engine('ejs', require('ejs').__express);
 
 passport.use(new GitHubStrategy({
         clientID: "e24a3ac1874eb843555e",
@@ -60,7 +59,7 @@ passport.use(new GitHubStrategy({
         app.get("/s", async(req, res) => {
             const shortUrls = await ShortUrl.find();
             const url = await ShortUrl.find({ realEmail: email});
-            res.render("shorten.ejs", { shortUrls: shortUrls ,url:url, userEmail:profile._json.email, userName:profile.displayName,id:profile.id});
+            res.render("shorten", { shortUrls: shortUrls ,url:url, userEmail:profile._json.email, userName:profile.displayName,id:profile.id});
         });
         app.post("/shortUrls", async(req, res) => {
             let ip = req.ip
@@ -127,7 +126,7 @@ passport.use(new GoogleStrategy({
         app.get("/s", async(req, res) => {
             const shortUrls = await ShortUrl.find();
             const url = await ShortUrl.find({ realEmail: email });
-            res.render("shorten.ejs", { shortUrls: shortUrls ,url:url, userEmail:profile.email, userName:profile.displayName,id:profile.id});
+            res.render("shorten", { shortUrls: shortUrls ,url:url, userEmail:profile.email, userName:profile.displayName,id:profile.id});
         });
         app.post("/shortUrls", async(req, res) => {
             let ip= req.ip
@@ -146,7 +145,7 @@ app.get('/auth/google',
 app.get( '/auth/google/callback',
     passport.authenticate( 'google', {
         successRedirect: '/s',
-        failureRedirect: '/auth/'
+        failureRedirect: '/'
     }));
 
 
