@@ -39,6 +39,10 @@ app.get("/", (req, res) => {
     res.render("auth.html")
 });
 
+
+// set the view engine to ejs
+app.set('view engine', 'ejs');
+
 passport.use(new GitHubStrategy({
         clientID: "e24a3ac1874eb843555e",
         clientSecret: "f93532099cc9ea7a254d3763fc85bf3e76933810",
@@ -51,10 +55,11 @@ passport.use(new GitHubStrategy({
             return done(err, user);
         });
 
+
         app.get("/s", async(req, res) => {
             const shortUrls = await ShortUrl.find();
             const url = await ShortUrl.find({ realEmail: email});
-            res.render("index", { shortUrls: shortUrls ,url:url, userEmail:profile._json.email, userName:profile.displayName,id:profile.id});
+            res.render("views/index", { shortUrls: shortUrls ,url:url, userEmail:profile._json.email, userName:profile.displayName,id:profile.id});
         });
         app.post("/shortUrls", async(req, res) => {
             let ip = req.ip
