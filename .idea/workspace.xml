@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="520fac60-5238-43c3-b02d-b3d30dacc8bd" name="Default Changelist" comment="removed unnecessary stuff">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="520fac60-5238-43c3-b02d-b3d30dacc8bd" name="Default Changelist" comment="removed unnecessary stuff" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -77,6 +75,7 @@
       <workItem from="1609688772657" duration="1835000" />
       <workItem from="1609771343149" duration="4968000" />
       <workItem from="1609776515311" duration="62000" />
+      <workItem from="1610893117296" duration="25000" />
     </task>
     <task id="LOCAL-00001" summary="started working on auth using github got into a major error.">
       <created>1608480744720</created>
