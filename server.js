@@ -5,7 +5,7 @@ const ShortUrl = require("./models/shortUrl");
 const app = express();
 const bcrypt = require("bcrypt");
 const Auth = require("./models/users");
-const { name } = require("ejs");
+const ejs= require("ejs");
 const ejsLint = require('ejs-lint');
 
 //auth config
@@ -14,6 +14,7 @@ var passport = require("passport");
 var GitHubStrategy = require("passport-github2").Strategy;
 
 //connecting to mongodb
+app.disable('x-powered-by')
 
 mongoose.connect(
     "mongodb://Mubashir:y4gQEVGPQKq0gQ9c@cluster0-shard-00-00.x4m8k.mongodb.net:27017,cluster0-shard-00-01.x4m8k.mongodb.net:27017,cluster0-shard-00-02.x4m8k.mongodb.net:27017/shortnner?ssl=true&replicaSet=atlas-en1n15-shard-0&authSource=admin&retryWrites=true&w=majority", {
@@ -36,12 +37,12 @@ app.set("views", __dirname + "/views");
 app.engine("html", require("ejs").renderFile);
 
 app.get("/", (req, res) => {
-    res.render("auth.html")
+    res.render("index.html")
 });
 
+app.set('view engine','ejs');
 
-// set the view engine to ejs
-app.set('view engine', 'ejs');
+app.engine('ejs', require('ejs').__express);
 
 passport.use(new GitHubStrategy({
         clientID: "e24a3ac1874eb843555e",
@@ -59,7 +60,7 @@ passport.use(new GitHubStrategy({
         app.get("/s", async(req, res) => {
             const shortUrls = await ShortUrl.find();
             const url = await ShortUrl.find({ realEmail: email});
-            res.render("index", { shortUrls: shortUrls ,url:url, userEmail:profile._json.email, userName:profile.displayName,id:profile.id});
+            res.render("shorten.ejs", { shortUrls: shortUrls ,url:url, userEmail:profile._json.email, userName:profile.displayName,id:profile.id});
         });
         app.post("/shortUrls", async(req, res) => {
             let ip = req.ip
@@ -126,7 +127,7 @@ passport.use(new GoogleStrategy({
         app.get("/s", async(req, res) => {
             const shortUrls = await ShortUrl.find();
             const url = await ShortUrl.find({ realEmail: email });
-            res.render("index", { shortUrls: shortUrls ,url:url, userEmail:profile.email, userName:profile.displayName,id:profile.id});
+            res.render("shorten.ejs", { shortUrls: shortUrls ,url:url, userEmail:profile.email, userName:profile.displayName,id:profile.id});
         });
         app.post("/shortUrls", async(req, res) => {
             let ip= req.ip

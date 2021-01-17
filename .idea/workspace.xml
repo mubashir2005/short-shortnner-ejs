@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="520fac60-5238-43c3-b02d-b3d30dacc8bd" name="Default Changelist" comment="removed unnecessary stuff">
+    <list default="true" id="520fac60-5238-43c3-b02d-b3d30dacc8bd" name="Default Changelist" comment="fixing another error">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/auth.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/index.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/shorten.ejs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +38,7 @@
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Documents/secrets" />
     <property name="nodejs_package_manager_path" value="yarn" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Node.js.server.js">
@@ -78,7 +80,7 @@
       <workItem from="1609688772657" duration="1835000" />
       <workItem from="1609771343149" duration="4968000" />
       <workItem from="1609776515311" duration="62000" />
-      <workItem from="1610893117296" duration="997000" />
+      <workItem from="1610893117296" duration="2528000" />
     </task>
     <task id="LOCAL-00001" summary="started working on auth using github got into a major error.">
       <created>1608480744720</created>
@@ -192,7 +194,21 @@
       <option name="project" value="LOCAL" />
       <updated>1610893331540</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="fixing another error">
+      <created>1610894156457</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1610894156457</updated>
+    </task>
+    <task id="LOCAL-00018" summary="fixing another error">
+      <created>1610894549061</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1610894549061</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -228,6 +244,14 @@
     <MESSAGE value="now i can track extra info from google auth" />
     <MESSAGE value="removed unnecessary stuff" />
     <MESSAGE value="trying to fix an error" />
-    <option name="LAST_COMMIT_MESSAGE" value="trying to fix an error" />
+    <MESSAGE value="fixing another error" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixing another error" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="NodeJSConfigurationType">
+        <watch expression="localhost:3000" language="JavaScript" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>
