@@ -46,8 +46,6 @@ app.get("/auth", (req, res) => {
     res.render("index.html")
 });
 
-app.set('view engine','ejs');
-
 
 passport.use(new GitHubStrategy({
         clientID: "e24a3ac1874eb843555e",
