@@ -3,7 +3,6 @@ require("dotenv").config();
 const mongoose = require("mongoose");
 const ShortUrl = require("./models/shortUrl");
 const app = express();
-const bcrypt = require("bcrypt");
 const Auth = require("./models/users");
 const ejsLint = require('ejs-lint');
 
@@ -43,7 +42,7 @@ app.use(express.urlencoded({ extended: false }));
 app.set("views", __dirname + "/views");
 app.engine("html", require("ejs").renderFile);
 
-app.get("/", (req, res) => {
+app.get("/auth", (req, res) => {
     res.render("index.html")
 });
 
@@ -63,10 +62,10 @@ passport.use(new GitHubStrategy({
         });
 
 
-        app.get("/s", async(req, res) => {
+        app.get("/", async(req, res) => {
             const shortUrls = await ShortUrl.find();
             const url = await ShortUrl.find({ realEmail: email});
-            res.render("shorten", { shortUrls: shortUrls ,url:url, userEmail:profile._json.email, userName:profile.displayName,id:profile.id});
+            res.render("index", { shortUrls: shortUrls ,url:url, userEmail:profile._json.email, userName:profile.displayName,id:profile.id});
         });
         app.post("/shortUrls", async(req, res) => {
             let ip = req.ip
@@ -130,16 +129,16 @@ passport.use(new GoogleStrategy({
         }, function (err, user) {
             return done(err, user);
         });
-        app.get("/s", async(req, res) => {
+        app.get("/", async(req, res) => {
             const shortUrls = await ShortUrl.find();
             const url = await ShortUrl.find({ realEmail: email });
-            res.render("shorten", { shortUrls: shortUrls ,url:url, userEmail:profile.email, userName:profile.displayName,id:profile.id});
+            res.render("index", { shortUrls: shortUrls ,url:url, userEmail:profile.email, userName:profile.displayName,id:profile.id});
         });
         app.post("/shortUrls", async(req, res) => {
             let ip= req.ip
             await ShortUrl.create({ full: req.body.fullUrl ,GivenEmail:req.body.email,name:profile.displayName,realEmail:profile.email, ip:ip});
 
-            res.redirect("/s");
+            res.redirect("/");
         });
     }
 ));
@@ -151,7 +150,7 @@ app.get('/auth/google',
 
 app.get( '/auth/google/callback',
     passport.authenticate( 'google', {
-        successRedirect: '/s',
+        successRedirect: '/',
         failureRedirect: '/'
     }));
 
