@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="520fac60-5238-43c3-b02d-b3d30dacc8bd" name="Default Changelist" comment="securing server">
+    <list default="true" id="520fac60-5238-43c3-b02d-b3d30dacc8bd" name="Default Changelist" comment="trying to fix errors">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/index.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/index.ejs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +83,8 @@
       <workItem from="1610893117296" duration="2965000" />
       <workItem from="1610896286682" duration="56000" />
       <workItem from="1610896427549" duration="136000" />
-      <workItem from="1610982243510" duration="2499000" />
+      <workItem from="1610982243510" duration="4614000" />
+      <workItem from="1611071583104" duration="594000" />
     </task>
     <task id="LOCAL-00001" summary="started working on auth using github got into a major error.">
       <created>1608480744720</created>
@@ -247,7 +247,21 @@
       <option name="project" value="LOCAL" />
       <updated>1610896556114</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="trying to fix errors">
+      <created>1610985024837</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1610985024837</updated>
+    </task>
+    <task id="LOCAL-00025" summary="trying to fix errors">
+      <created>1610985154594</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1610985154594</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -286,9 +300,9 @@
     <MESSAGE value="fixing another error" />
     <MESSAGE value="trying to fix ejs render error" />
     <MESSAGE value="got into ejs error" />
-    <MESSAGE value="trying to fix errors" />
     <MESSAGE value="securing server" />
-    <option name="LAST_COMMIT_MESSAGE" value="securing server" />
+    <MESSAGE value="trying to fix errors" />
+    <option name="LAST_COMMIT_MESSAGE" value="trying to fix errors" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

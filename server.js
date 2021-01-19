@@ -6,16 +6,7 @@ const app = express();
 const Auth = require("./models/users");
 const ejsLint = require('ejs-lint');
 
-//securing server
-// ...
 
-const helmet = require('helmet');
-app.use(helmet())
-
-// ...
-app.disable('x-powered-by')
-
-//auth config
 
 var passport = require("passport");
 var GitHubStrategy = require("passport-github2").Strategy;
@@ -69,7 +60,7 @@ passport.use(new GitHubStrategy({
             let ip = req.ip
             await ShortUrl.create({ full: req.body.fullUrl ,GivenEmail:req.body.email,name:profile.displayName,realEmail:profile.email, ip:ip});
 
-            res.redirect("/s");
+            res.redirect("/");
         });
 
     }
@@ -109,7 +100,7 @@ app.get(
     passport.authenticate("github", { failureRedirect: "/auth" }),
     function(req, res) {
         // Successful authentication, redirect home.
-        res.redirect("/s");
+        res.redirect("/");
     }
 );
 var GoogleStrategy = require( 'passport-google-oauth2' ).Strategy;
@@ -165,6 +156,17 @@ app.get("/:shortUrl", async(req, res) => {
     shortUrl.save();
 
     res.redirect(shortUrl.full);
+
 });
+//securing server
+// ...
+
+const helmet = require('helmet');
+app.use(helmet())
+
+// ...
+app.disable('x-powered-by')
+
+//auth config
 
 app.listen(process.env.PORT || 3000, () => console.log("running at 3000 port"));
