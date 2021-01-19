@@ -1,2 +1,2 @@
 # short-shortnner-backend
-Short Shortnner's server
+This is now officially deprecated . Short Shortnner will get a new server.
