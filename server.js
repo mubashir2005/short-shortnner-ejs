@@ -158,15 +158,15 @@ app.get("/:shortUrl", async(req, res) => {
     res.redirect(shortUrl.full);
 
 });
+/*
 //securing server
-// ...
 
 const helmet = require('helmet');
 app.use(helmet())
 
-// ...
 app.disable('x-powered-by')
 
-//auth config
+*/
+
 
 app.listen(process.env.PORT || 3000, () => console.log("running at 3000 port"));
