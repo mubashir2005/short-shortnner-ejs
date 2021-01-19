@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="520fac60-5238-43c3-b02d-b3d30dacc8bd" name="Default Changelist" comment="trying to fix errors">
+    <list default="true" id="520fac60-5238-43c3-b02d-b3d30dacc8bd" name="Default Changelist" comment="removed .vscode as i use webstorm for all my backend stuff">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/index.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/index.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +84,8 @@
       <workItem from="1610896286682" duration="56000" />
       <workItem from="1610896427549" duration="136000" />
       <workItem from="1610982243510" duration="4614000" />
-      <workItem from="1611071583104" duration="594000" />
+      <workItem from="1611071583104" duration="1754000" />
+      <workItem from="1611073790197" duration="962000" />
     </task>
     <task id="LOCAL-00001" summary="started working on auth using github got into a major error.">
       <created>1608480744720</created>
@@ -261,7 +262,35 @@
       <option name="project" value="LOCAL" />
       <updated>1610985154594</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="fixing broken stuff">
+      <created>1611072480152</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1611072480152</updated>
+    </task>
+    <task id="LOCAL-00027" summary="fixing">
+      <created>1611072540629</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1611072540629</updated>
+    </task>
+    <task id="LOCAL-00028" summary="fixing security stuff which is killing content">
+      <created>1611072785444</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1611072785444</updated>
+    </task>
+    <task id="LOCAL-00029" summary="removed .vscode as i use webstorm for all my backend stuff">
+      <created>1611073075584</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1611073075584</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -302,7 +331,11 @@
     <MESSAGE value="got into ejs error" />
     <MESSAGE value="securing server" />
     <MESSAGE value="trying to fix errors" />
-    <option name="LAST_COMMIT_MESSAGE" value="trying to fix errors" />
+    <MESSAGE value="fixing broken stuff" />
+    <MESSAGE value="fixing" />
+    <MESSAGE value="fixing security stuff which is killing content" />
+    <MESSAGE value="removed .vscode as i use webstorm for all my backend stuff" />
+    <option name="LAST_COMMIT_MESSAGE" value="removed .vscode as i use webstorm for all my backend stuff" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

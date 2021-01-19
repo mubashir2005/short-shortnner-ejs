@@ -5,6 +5,7 @@ const ShortUrl = require("./models/shortUrl");
 const app = express();
 const Auth = require("./models/users");
 const ejsLint = require('ejs-lint');
+require('dotenv').config()
 
 
 
@@ -40,7 +41,7 @@ app.get("/auth", (req, res) => {
 
 passport.use(new GitHubStrategy({
         clientID: "e24a3ac1874eb843555e",
-        clientSecret: "f93532099cc9ea7a254d3763fc85bf3e76933810",
+        clientSecret: process.env.GITHUB_SECRET,
         callbackURL: "https://short-nner.herokuapp.com/auth/github/callback",
     },
     function(accessToken, refreshToken, profile, done) {
@@ -107,7 +108,7 @@ var GoogleStrategy = require( 'passport-google-oauth2' ).Strategy;
 
 passport.use(new GoogleStrategy({
         clientID:    '220565751325-99unjjb3n77re39faolb1iks9u3n0tle.apps.googleusercontent.com',
-        clientSecret: 'xJLEn_2v1VQ3UPxjGahh2QtD',
+        clientSecret: process.env.GOOGLE_SECRET,
         callbackURL: "https://short-nner.herokuapp.com/auth/google/callback",
         passReqToCallback   : true
     },

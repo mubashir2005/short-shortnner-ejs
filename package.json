@@ -28,7 +28,7 @@
     "firebaseui": "^4.7.1",
     "global": "^4.4.0",
     "helmet": "^4.3.1",
-    "heroku": "^7.47.3",
+    "heroku": "^7.47.7",
     "ipware": "^2.0.0",
     "materialize-css": "^1.0.0-rc.2",
     "method-override": "^3.0.0",
