@@ -1,2 +1,1 @@
-# short-shortnner-backend
-Short Shortnner's server
+This will soon be deprecated . Short Shortnner will get a new server. Our server is now moving <a href="https://github.com/dingus45191/short-shortnner-server">here</a>
