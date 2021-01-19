@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="520fac60-5238-43c3-b02d-b3d30dacc8bd" name="Default Changelist" comment="removed .vscode as i use webstorm for all my backend stuff">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
-    </list>
+    <list default="true" id="520fac60-5238-43c3-b02d-b3d30dacc8bd" name="Default Changelist" comment="removed secrets" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -85,7 +80,7 @@
       <workItem from="1610896427549" duration="136000" />
       <workItem from="1610982243510" duration="4614000" />
       <workItem from="1611071583104" duration="1754000" />
-      <workItem from="1611073790197" duration="962000" />
+      <workItem from="1611073790197" duration="1061000" />
     </task>
     <task id="LOCAL-00001" summary="started working on auth using github got into a major error.">
       <created>1608480744720</created>
@@ -290,7 +285,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611073075584</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="removed secrets">
+      <created>1611074813351</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1611074813351</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -310,7 +312,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="started working on auth using github got into a major error." />
     <MESSAGE value="some workspace.xml stuff" />
     <MESSAGE value="moved a bit forward" />
     <MESSAGE value="will try to get auth data to database. For now i'll style the auth page" />
@@ -335,7 +336,8 @@
     <MESSAGE value="fixing" />
     <MESSAGE value="fixing security stuff which is killing content" />
     <MESSAGE value="removed .vscode as i use webstorm for all my backend stuff" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed .vscode as i use webstorm for all my backend stuff" />
+    <MESSAGE value="removed secrets" />
+    <option name="LAST_COMMIT_MESSAGE" value="removed secrets" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
