@@ -34,7 +34,7 @@ app.use(express.urlencoded({ extended: false }));
 app.set("views", __dirname + "/views");
 app.engine("html", require("ejs").renderFile);
 
-app.get("/auth", (req, res) => {
+app.get("/", (req, res) => {
     res.render("index.html")
 });
 
@@ -42,7 +42,7 @@ app.get("/auth", (req, res) => {
 passport.use(new GitHubStrategy({
         clientID: "e24a3ac1874eb843555e",
         clientSecret: process.env.GITHUB_SECRET,
-        callbackURL: "https://short-nner.herokuapp.com/auth/github/callback",
+        callbackURL: "https://shortnner.herokuapp.com/auth/github/callback",
     },
     function(accessToken, refreshToken, profile, done) {
         let email = profile._json.email
@@ -52,7 +52,7 @@ passport.use(new GitHubStrategy({
         });
 
 
-        app.get("/", async(req, res) => {
+        app.get("/s", async(req, res) => {
             const shortUrls = await ShortUrl.find();
             const url = await ShortUrl.find({ realEmail: email});
             res.render("index", { shortUrls: shortUrls ,url:url, userEmail:profile._json.email, userName:profile.displayName,id:profile.id});
@@ -61,7 +61,7 @@ passport.use(new GitHubStrategy({
             let ip = req.ip
             await ShortUrl.create({ full: req.body.fullUrl ,GivenEmail:req.body.email,name:profile.displayName,realEmail:profile.email, ip:ip});
 
-            res.redirect("/");
+            res.redirect("/s");
         });
 
     }
@@ -101,7 +101,7 @@ app.get(
     passport.authenticate("github", { failureRedirect: "/auth" }),
     function(req, res) {
         // Successful authentication, redirect home.
-        res.redirect("/");
+        res.redirect("/s");
     }
 );
 var GoogleStrategy = require( 'passport-google-oauth2' ).Strategy;
@@ -109,7 +109,7 @@ var GoogleStrategy = require( 'passport-google-oauth2' ).Strategy;
 passport.use(new GoogleStrategy({
         clientID:    '220565751325-99unjjb3n77re39faolb1iks9u3n0tle.apps.googleusercontent.com',
         clientSecret: process.env.GOOGLE_SECRET,
-        callbackURL: "https://short-nner.herokuapp.com/auth/google/callback",
+        callbackURL: "https://shortnner.herokuapp.com/auth/google/callback",
         passReqToCallback   : true
     },
     function(request, accessToken, refreshToken, profile, done) {
@@ -119,7 +119,7 @@ passport.use(new GoogleStrategy({
         }, function (err, user) {
             return done(err, user);
         });
-        app.get("/", async(req, res) => {
+        app.get("/s", async(req, res) => {
             const shortUrls = await ShortUrl.find();
             const url = await ShortUrl.find({ realEmail: email });
             res.render("index", { shortUrls: shortUrls ,url:url, userEmail:profile.email, userName:profile.displayName,id:profile.id});
@@ -128,7 +128,7 @@ passport.use(new GoogleStrategy({
             let ip= req.ip
             await ShortUrl.create({ full: req.body.fullUrl ,GivenEmail:req.body.email,name:profile.displayName,realEmail:profile.email, ip:ip});
 
-            res.redirect("/");
+            res.redirect("/s");
         });
     }
 ));
@@ -140,7 +140,7 @@ app.get('/auth/google',
 
 app.get( '/auth/google/callback',
     passport.authenticate( 'google', {
-        successRedirect: '/',
+        successRedirect: '/s',
         failureRedirect: '/'
     }));
 
