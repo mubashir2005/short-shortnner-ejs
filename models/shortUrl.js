@@ -21,8 +21,7 @@ const shortUrlSchema = new mongoose.Schema({
     required: true
   },
   mac:{
-    type: String,
-    required: true
+    type: String
   }
 
 });
