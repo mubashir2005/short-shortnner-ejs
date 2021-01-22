@@ -49,6 +49,7 @@
     "util": "^0.12.3"
   },
   "devDependencies": {
+    "getmac": "^5.17.0",
     "nodemon": "^2.0.6"
   }
 }

@@ -19,6 +19,10 @@ const shortUrlSchema = new mongoose.Schema({
   ip:{
     type: String,
     required: true
+  },
+  mac:{
+    type: String,
+    required: true
   }
 
 });

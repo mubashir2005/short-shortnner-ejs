@@ -5,10 +5,8 @@ const ShortUrl = require("./models/shortUrl");
 const app = express();
 const ejsLint = require('ejs-lint');
 
+const getMac = require('getmac')
 
-
-var passport = require("passport");
-var GitHubStrategy = require("passport-github2").Strategy;
 
 //connecting to mongodb
 
@@ -27,17 +25,17 @@ app.use(expressip().getIpInfoMiddleware);
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: false }));
 
-
+let mac= getMac('eth0')
 
 app.get("/", async(req, res) => {
     let ip= req.ip
     const shortUrls = await ShortUrl.find();
-    const url = await ShortUrl.find({ip:ip});
+    const url = await ShortUrl.find({mac:mac});
     res.render("index", { shortUrls: shortUrls ,url:url});
 });
 app.post("/shortUrls", async(req, res) => {
     let ip= req.ip
-    await ShortUrl.create({ full: req.body.fullUrl, ip:ip, shortid: req.shortid});
+    await ShortUrl.create({ full: req.body.fullUrl, ip:ip, shortid: req.shortid, mac:mac});
 
     res.redirect("/");
 });
