@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="520fac60-5238-43c3-b02d-b3d30dacc8bd" name="Default Changelist" comment="fixing auth">
+    <list default="true" id="520fac60-5238-43c3-b02d-b3d30dacc8bd" name="Default Changelist" comment="removed unnecessary stuff to enchance user experience">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/index.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/index.ejs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +90,7 @@
       <workItem from="1611160463773" duration="658000" />
       <workItem from="1611161167316" duration="151000" />
       <workItem from="1611208580087" duration="384000" />
-      <workItem from="1611293830610" duration="454000" />
+      <workItem from="1611293830610" duration="818000" />
     </task>
     <task id="LOCAL-00001" summary="started working on auth using github got into a major error.">
       <created>1608480744720</created>
@@ -332,7 +330,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611208657850</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="removed unnecessary stuff to enchance user experience">
+      <created>1611294626042</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1611294626042</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -352,7 +357,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="will try to get auth data to database. For now i'll style the auth page" />
     <MESSAGE value="auth with google and github works now and i can now send data to my db thanks to that awesome guy from the other day" />
     <MESSAGE value="some changes" />
     <MESSAGE value="now i can send auth data to my db" />
@@ -377,7 +381,8 @@
     <MESSAGE value="removed unnecessary dependencies" />
     <MESSAGE value="fixing" />
     <MESSAGE value="fixing auth" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixing auth" />
+    <MESSAGE value="removed unnecessary stuff to enchance user experience" />
+    <option name="LAST_COMMIT_MESSAGE" value="removed unnecessary stuff to enchance user experience" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
