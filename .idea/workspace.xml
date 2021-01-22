@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="520fac60-5238-43c3-b02d-b3d30dacc8bd" name="Default Changelist" comment="fixed another link">
+    <list default="true" id="520fac60-5238-43c3-b02d-b3d30dacc8bd" name="Default Changelist" comment="found way to collect mac">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +94,7 @@
       <workItem from="1611295120247" duration="181000" />
       <workItem from="1611295861449" duration="172000" />
       <workItem from="1611297425999" duration="511000" />
-      <workItem from="1611298266068" duration="329000" />
+      <workItem from="1611298266068" duration="778000" />
     </task>
     <task id="LOCAL-00001" summary="started working on auth using github got into a major error.">
       <created>1608480744720</created>
@@ -370,7 +369,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611297933229</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="found way to collect mac">
+      <created>1611298890794</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1611298890794</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -390,7 +396,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="now shows email associated with link" />
     <MESSAGE value="fixed copyright stuff" />
     <MESSAGE value="got into error" />
     <MESSAGE value="error solved thanks to an awesome guy" />
@@ -415,7 +420,8 @@
     <MESSAGE value="fixed all errors" />
     <MESSAGE value="fixed link" />
     <MESSAGE value="fixed another link" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed another link" />
+    <MESSAGE value="found way to collect mac" />
+    <option name="LAST_COMMIT_MESSAGE" value="found way to collect mac" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
