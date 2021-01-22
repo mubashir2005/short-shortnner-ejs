@@ -47,19 +47,15 @@
             }
         }
     </style>
-    <script>
-    alert('This won\'t work if you are not logged in and will crash')
-    </script>
 </head>
 
 <body>
     <div class="container">
         <h1 class="title">Shorten your URLs for free</h1>
-        <h5 name="realName">Hello <%=userName %>!</h5>
         <form action="/shortUrls" method="POST" class="my-4 form-inline">
             <label for="fullUrl" class="sr-only">Url</label>
             <input required placeholder="Type or Paste your URL here" type="url" name="fullUrl" id="fullUrl" class="form-control col mr-2" />
-            <input type="email" required placeholder="Enter email to be associated with this link." name="email" id="email" class="form-control col mr-2"/>
+            <input placeholder="Your shortid/name of shortened domain" name="shortid" class="form-control col mr-2" type="text">
             <button class="btn btn-primary" type="submit">Shorten</button>
         </form>
 
@@ -69,7 +65,6 @@
                     <th class="styled">Full URL</th>
                     <th class="styled">Short URL</th>
                     <th class="styled">Clicks</th>
-                     <th class="styled">Email</th>
                 </tr>
             </thead>
             <tbody>
@@ -85,7 +80,6 @@
                         >
                     </td>
                     <td><%= shortUrl.clicks %></td>
-                    <td><%= shortUrl.GivenEmail %>
                 </tr>
             <%})%>
         </tbody>

@@ -16,18 +16,6 @@ const shortUrlSchema = new mongoose.Schema({
     required: true,
     default: 0,
   },
-  GivenEmail: {
-    type: String,
-    required:true,
-  },
-  realEmail: {
-    type: String,
-    required:true,
-  },
-  name: {
-    type: String,
-    required:true
-  },
   ip:{
     type: String,
     required: true
