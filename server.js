@@ -4,7 +4,6 @@ const mongoose = require("mongoose");
 const ShortUrl = require("./models/shortUrl");
 const app = express();
 const ejsLint = require('ejs-lint');
-require('dotenv').config()
 
 
 
@@ -55,13 +54,15 @@ app.get("/:shortUrl", async(req, res) => {
     res.redirect(shortUrl.full);
 
 });
-// //securing server
-//
-// const helmet = require('helmet');
-// app.use(helmet())
-//
-// app.disable('x-powered-by')
-//
-//
+/*
+//securing server
+
+const helmet = require('helmet');
+app.use(helmet())
+
+app.disable('x-powered-by')
+
+*/
+
 // //listening to server
 app.listen(process.env.PORT || 3000, () => console.log("running at 3000 port"));
