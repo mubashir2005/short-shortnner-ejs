@@ -1,13 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="520fac60-5238-43c3-b02d-b3d30dacc8bd" name="Default Changelist" comment="found way to collect mac">
+    <list default="true" id="520fac60-5238-43c3-b02d-b3d30dacc8bd" name="Default Changelist" comment="fixing">
+      <change afterPath="$PROJECT_DIR$/axios.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/shortUrl.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/shortUrl.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="PUSH_TAGS">
@@ -95,6 +107,8 @@
       <workItem from="1611295861449" duration="172000" />
       <workItem from="1611297425999" duration="511000" />
       <workItem from="1611298266068" duration="778000" />
+      <workItem from="1611299553746" duration="380000" />
+      <workItem from="1611305719902" duration="1509000" />
     </task>
     <task id="LOCAL-00001" summary="started working on auth using github got into a major error.">
       <created>1608480744720</created>
@@ -376,7 +390,21 @@
       <option name="project" value="LOCAL" />
       <updated>1611298890794</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="fixing">
+      <created>1611299600687</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1611299600687</updated>
+    </task>
+    <task id="LOCAL-00042" summary="fixing">
+      <created>1611299758895</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1611299758895</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -414,14 +442,14 @@
     <MESSAGE value="removed .vscode as i use webstorm for all my backend stuff" />
     <MESSAGE value="removed secrets" />
     <MESSAGE value="removed unnecessary dependencies" />
-    <MESSAGE value="fixing" />
     <MESSAGE value="fixing auth" />
     <MESSAGE value="removed unnecessary stuff to enchance user experience" />
     <MESSAGE value="fixed all errors" />
     <MESSAGE value="fixed link" />
     <MESSAGE value="fixed another link" />
     <MESSAGE value="found way to collect mac" />
-    <option name="LAST_COMMIT_MESSAGE" value="found way to collect mac" />
+    <MESSAGE value="fixing" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixing" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
