@@ -5,7 +5,13 @@ const ShortUrl = require("./models/shortUrl");
 const app = express();
 const ejsLint = require('ejs-lint');
 
+const requestIp = require('request-ip');
 
+// inside middleware handler
+const ipMiddleware = function(req, res, next) {
+    const clientIp = requestIp.getClientIp(req);
+    next();
+};
 
 
 
@@ -17,10 +23,6 @@ mongoose.connect(
         useUnifiedTopology: true,
     }
 );
-//getting user location
-const expressip = require('express-ip');
-
-app.use(expressip().getIpInfoMiddleware);
 
 
 app.set("view engine", "ejs");
@@ -29,14 +31,22 @@ app.use(express.urlencoded({ extended: false }));
 
 
 app.get("/", async(req, res) => {
-    let ip= req.ip
+    let ip = req.headers['x-forwarded-for'] ||
+        req.connection.remoteAddress ||
+        req.socket.remoteAddress ||
+        (req.connection.socket ? req.connection.socket.remoteAddress : null);
+    console.log(ip)
     const shortUrls = await ShortUrl.find();
     const url = await ShortUrl.find({ip:ip});
     res.render("index", { shortUrls: shortUrls ,url:url});
+
 });
 app.post("/shortUrls", async(req, res) => {
-    let ip= req.ip
-    await ShortUrl.create({ full: req.body.fullUrl, ip:ip, shortid: req.shortid});
+    let ip = req.headers['x-forwarded-for'] ||
+        req.connection.remoteAddress ||
+        req.socket.remoteAddress ||
+        (req.connection.socket ? req.connection.socket.remoteAddress : null);
+    await ShortUrl.create({ full: req.body.fullUrl, shortid: req.shortid ,ip:ip});
 
     res.redirect("/");
 });

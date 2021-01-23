@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="520fac60-5238-43c3-b02d-b3d30dacc8bd" name="Default Changelist" comment="fixing">
-      <change afterPath="$PROJECT_DIR$/axios.js" afterDir="false" />
+    <list default="true" id="520fac60-5238-43c3-b02d-b3d30dacc8bd" name="Default Changelist" comment="deploying again">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/shortUrl.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/shortUrl.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
@@ -109,6 +107,7 @@
       <workItem from="1611298266068" duration="778000" />
       <workItem from="1611299553746" duration="380000" />
       <workItem from="1611305719902" duration="1509000" />
+      <workItem from="1611406322883" duration="1932000" />
     </task>
     <task id="LOCAL-00001" summary="started working on auth using github got into a major error.">
       <created>1608480744720</created>
@@ -404,7 +403,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611299758895</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="deploying again">
+      <created>1611406438563</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1611406438563</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -424,7 +430,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="fixed copyright stuff" />
     <MESSAGE value="got into error" />
     <MESSAGE value="error solved thanks to an awesome guy" />
     <MESSAGE value="now can track ip and other info through ip" />
@@ -449,7 +454,8 @@
     <MESSAGE value="fixed another link" />
     <MESSAGE value="found way to collect mac" />
     <MESSAGE value="fixing" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixing" />
+    <MESSAGE value="deploying again" />
+    <option name="LAST_COMMIT_MESSAGE" value="deploying again" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
