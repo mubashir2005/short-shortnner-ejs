@@ -29,7 +29,7 @@ app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: false }));
 
 
-
+//hey
 app.get("/", async(req, res) => {
     let ip = req.headers['x-forwarded-for'] ||
         req.connection.remoteAddress ||
@@ -46,7 +46,7 @@ app.post("/shortUrls", async(req, res) => {
         req.connection.remoteAddress ||
         req.socket.remoteAddress ||
         (req.connection.socket ? req.connection.socket.remoteAddress : null);
-    await ShortUrl.create({ full: req.body.fullUrl, shortid: req.shortid ,ip:ip});
+    await ShortUrl.create({ full: req.body.fullUrl, short: req.body.short ,ip:ip});
 
     res.redirect("/");
 });

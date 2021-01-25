@@ -55,7 +55,7 @@
         <form action="/shortUrls" method="POST" class="my-4 form-inline">
             <label for="fullUrl" class="sr-only">Url</label>
             <input required placeholder="Type or Paste your URL here" type="url" name="fullUrl" id="fullUrl" class="form-control col mr-2" />
-            <input placeholder="Your shortid/name of shortened domain" name="shortid" class="form-control col mr-2" type="text">
+            <input placeholder="Your shortid/name of shortened domain" name="short" id="short" class="form-control col mr-2" type="text">
             <button class="btn btn-primary" type="submit">Shorten</button>
         </form>
 
@@ -76,7 +76,7 @@
                         </a>
                     </td>
                     <td>
-                        <a href="<%= shortUrl.short %>">shortnner.herokuapp.com/<%= shortUrl.short %></a
+                        <a href="<%= shortUrl.short %>">shorts.rocks/<%= shortUrl.short %></a
                         >
                     </td>
                     <td><%= shortUrl.clicks %></td>
