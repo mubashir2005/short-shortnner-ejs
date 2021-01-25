@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="520fac60-5238-43c3-b02d-b3d30dacc8bd" name="Default Changelist" comment="deploying again">
+    <list default="true" id="520fac60-5238-43c3-b02d-b3d30dacc8bd" name="Default Changelist" comment="now works fine">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +40,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="consentGiven" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Documents/secrets" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ts-intro" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -107,7 +104,9 @@
       <workItem from="1611298266068" duration="778000" />
       <workItem from="1611299553746" duration="380000" />
       <workItem from="1611305719902" duration="1509000" />
-      <workItem from="1611406322883" duration="1932000" />
+      <workItem from="1611406322883" duration="2481000" />
+      <workItem from="1611502950291" duration="31000" />
+      <workItem from="1611550282735" duration="11000" />
     </task>
     <task id="LOCAL-00001" summary="started working on auth using github got into a major error.">
       <created>1608480744720</created>
@@ -410,7 +409,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611406438563</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="now works fine">
+      <created>1611408288384</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1611408288384</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -430,7 +436,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="got into error" />
     <MESSAGE value="error solved thanks to an awesome guy" />
     <MESSAGE value="now can track ip and other info through ip" />
     <MESSAGE value="fixed a thing" />
@@ -455,7 +460,8 @@
     <MESSAGE value="found way to collect mac" />
     <MESSAGE value="fixing" />
     <MESSAGE value="deploying again" />
-    <option name="LAST_COMMIT_MESSAGE" value="deploying again" />
+    <MESSAGE value="now works fine" />
+    <option name="LAST_COMMIT_MESSAGE" value="now works fine" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
