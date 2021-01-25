@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="520fac60-5238-43c3-b02d-b3d30dacc8bd" name="Default Changelist" comment="now works fine">
+    <list default="true" id="520fac60-5238-43c3-b02d-b3d30dacc8bd" name="Default Changelist" comment="fixed a critical security issue">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,7 +42,7 @@
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../ts-intro" />
     <property name="nodejs_package_manager_path" value="yarn" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Node.js.server.js">
@@ -107,6 +107,9 @@
       <workItem from="1611406322883" duration="2481000" />
       <workItem from="1611502950291" duration="31000" />
       <workItem from="1611550282735" duration="11000" />
+      <workItem from="1611550558261" duration="447000" />
+      <workItem from="1611551064173" duration="158000" />
+      <workItem from="1611551256626" duration="196000" />
     </task>
     <task id="LOCAL-00001" summary="started working on auth using github got into a major error.">
       <created>1608480744720</created>
@@ -416,7 +419,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611408288384</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="fixed a critical security issue">
+      <created>1611550750247</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1611550750247</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -436,7 +446,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="error solved thanks to an awesome guy" />
     <MESSAGE value="now can track ip and other info through ip" />
     <MESSAGE value="fixed a thing" />
     <MESSAGE value="now i can track extra info from google auth" />
@@ -461,7 +470,8 @@
     <MESSAGE value="fixing" />
     <MESSAGE value="deploying again" />
     <MESSAGE value="now works fine" />
-    <option name="LAST_COMMIT_MESSAGE" value="now works fine" />
+    <MESSAGE value="fixed a critical security issue" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed a critical security issue" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
